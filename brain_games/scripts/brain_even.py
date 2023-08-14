@@ -2,6 +2,7 @@ from random import randint
 from brain_games.cli import welcome_name
 def main():
     def even():
+            print('Welcome to the Brain Games!') 
             print('Answer "yes" if the number is even, otherwise answer "no".')
             num = randint(1, 30)
             print(f'Question: {num}')
