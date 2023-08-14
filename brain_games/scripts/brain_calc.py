@@ -12,7 +12,7 @@ def main():
         correct_answer = None
         op_string = ''
     #  '+' = 0, '-' = 1, '*' = 2
-        operator = randint(3)
+        operator = randint(0, 3)
         if operator == 0:
             correct_answer = fst_num + scnd_num
             op_string = '+'
@@ -25,7 +25,7 @@ def main():
         print(f'Question: {fst_num} {op_string} {scnd_num}')
         answer = input('Your answer: ')
 
-        if correct_answer == answer:
+        if int(correct_answer) == int(answer):
             count += 1
             print('Correct!')
             continue
@@ -34,5 +34,5 @@ def main():
             print(f'{answer} is wrong answer ;(. Correct answer was {correct_answer}.')
             print(f"Let's try again, {name}!")
             continue
-    if count == 0:
-        print(f'Congratulations, {name}')
+    if count == 3:
+        print(f'Congratulations, {name}!')
