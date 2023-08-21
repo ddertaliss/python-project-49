@@ -1,26 +1,24 @@
+
 from random import randint
+from brain_games.logic import *
 def main():
-        print('Welcome to the Brain Games!')
-        name = input('May I have your name? ')
-        print(f'Hello, {name}')
-        print('Answer "yes" if the number is even, otherwise answer "no".')
 
-        count = 0
-        for _ in range(3):
-            num = randint(1, 30)
-            print(f'Question: {num}')
-            answer = input('Your answer:')
-            correct_answer = ''
-            if num % 2 == 0:
-                correct_answer = 'yes'
-            else:
-                correct_answer = 'no'
-            if answer == correct_answer:
-                print('Correct!')
-                count += 1
-                if count != 3:
-                     continue
-                else:
-                     print(f"Congratulations, {name}!")
-                     break
-
+    count = 0
+    print('Answer "yes" if the number is even, otherwise answer "no".')
+    for i in range(GLOBAL_COUNT):
+        num = randint(START, END)
+        print(f'Question: {num}')
+        correct = ''
+        if num % 2 == 0:
+            correct = 'yes'
+        else:
+            correct = 'no'
+        answer = input('Your answer:')
+        
+        if logic_answer(answer, correct) == True:
+            count += 1
+        else:
+            count = 0
+            continue
+    if count == 3:
+        logic_bye(name)
