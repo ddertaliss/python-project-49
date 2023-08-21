@@ -1,11 +1,9 @@
 from random import randint
+from brain_games.logic import *
 def main():
-    print('Welcome to the Brain Games!')
-    name = input('May I have your name? ')
-    print(f'Hello, {name}!')
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     for i in range(3):
-        num = randint(1, 40)
+        num = randint(START, END)
         correct = None
         answer = None
         count = 1
@@ -20,12 +18,10 @@ def main():
         
         print(f'Question: {num}')
         answer = input('Your answer: ')
-        if answer == correct:
-            print('Correct!')
+        if logic_answer(answer, correct) == True:
             count_global += 1
         else:
-            print(f'{answer} is wrong answer ;(. Correct answer was {correct}.')
-            print("Let's try again, {name}")
             count_global = 0
+            break
     if count_global == 3:
-        print(f'Congratulations, {name}!')
+        logic_bye(name)
