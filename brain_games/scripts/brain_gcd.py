@@ -1,13 +1,11 @@
 from random import randint
+from brain_games.logic import *
 def main():
-        print('Welcome to the Brain Games!')
-        name = input('May I have your name? ')
-        print(f'Hello, {name}')
 
         count = 0
         for i in range(3):
-            fst_num = randint(1, 80)
-            scnd_num = randint(1, 80)
+            fst_num = randint(START, END)
+            scnd_num = randint(START, END)
             num1 = None
             num2 = None
             if fst_num < scnd_num:
@@ -18,9 +16,10 @@ def main():
                 num2 = fst_num
             
             count_num = None 
+            correct = None
             for j in range(1, num1 + 1):
                 if num1 % j == 0 and num2 % j == 0:
-                    correct_answer = j
+                    correct = j
                     if j == 1:
                         if fst_num % 2 == 0 and scnd_num % 2 == 0:
                             continue
@@ -28,14 +27,11 @@ def main():
                             break
 
             print(f'Question: {fst_num} {scnd_num}')
-            answer = input('Your answer: ')
-            if int(correct_answer) == int(answer):
-                print('Correct!')
-                count += 1
-                continue
+            answer = int(input('Your answer: '))
+            if logic_answer(answer, correct) == True:
+                 count += 1
             else:
-                print(f'{answer} is wrong answer ;(. Correct answer was {correct_answer}.')
-                count = 0
-                continue
+                 count = 0
+                 break
         if count == 3:
-             print(f'Congratulations, {name}!')
+            logic_bye(name)
