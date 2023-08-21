@@ -19,5 +19,6 @@ def main():
             count += 1
         else:
             count = 0
+            break
     if count == 3:
         logic_bye(name)
