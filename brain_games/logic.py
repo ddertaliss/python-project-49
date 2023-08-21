@@ -18,6 +18,8 @@ def logic_answer(answer, correct):
         print(f'{answer} is wrong answer ;(. Correct answer was {correct}.')
         print(f"Let's try again, {name}")
         return False
+    
+    
 def logic_bye(name):
     print(f'Congratulations, {name[7:-1]}!')
     

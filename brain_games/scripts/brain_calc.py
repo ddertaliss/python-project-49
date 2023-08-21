@@ -1,18 +1,23 @@
 from random import randint
+from brain_games.logic import *
 def main():
-    print('Welcome to the Brain Games!')
-    name = input('May I have your name? ')
-    print(f'Hello, {name}')
+    logic_hello()
     print('What is the result of the expression?')
 
     count = 0
     for i in range(3):
-        fst_num = randint(1, 30)
-        scnd_num = randint(2, 31)
+        FST_START = 1
+        FST_END = 30
+        SCND_START = 2
+        SCND_END = 31
+        FST_OP = 0
+        SCND_OP = 3
+        fst_num = randint(FST_START, FST_END)
+        scnd_num = randint(SCND_START, SCND_END)
         correct_answer = None
         op_string = ''
     #  '+' = 0, '-' = 1, '*' = 2
-        operator = randint(0, 3)
+        operator = randint(FST_OP, SCND_OP)
         if operator == 0:
             correct_answer = fst_num + scnd_num
             op_string = '+'
@@ -23,16 +28,12 @@ def main():
             correct_answer = fst_num * scnd_num
             op_string = '*'
         print(f'Question: {fst_num} {op_string} {scnd_num}')
-        answer = input('Your answer: ')
+        answer = int(input('Your answer: '))
 
-        if int(correct_answer) == int(answer):
+        if logic_answer == True:
             count += 1
-            print('Correct!')
-            continue
         else:
             count = 0
-            print(f'{answer} is wrong answer ;(. Correct answer was {correct_answer}.')
-            print(f"Let's try again, {name}!")
             continue
     if count == 3:
-        print(f'Congratulations, {name}!')
+        logic_bye(name)
