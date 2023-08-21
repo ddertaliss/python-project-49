@@ -1,17 +1,19 @@
 from random import randint
+from brain_games.logic import *
 def main():
-    print('Welcome to the Brain Games!')
-    name = input('May I have your name? ')
-    print(f'Hello, {name}!')
     print('What number is missing in the progression?')
 
     count = 0
     for i in range(3):
-        fst_num = randint(1, 5)
-        scnd_num = randint(15, 25)
-        diff = 2
+        FST_START = 1
+        FST_END = 5
+        SCND_START = 15
+        SCND_END = 25
+        fst_num = randint(FST_START, SCND_END)
+        scnd_num = randint(SCND_START, SCND_END)
+        DIFF = 2
         matrix = []
-        for j in range(fst_num, scnd_num, diff):
+        for j in range(fst_num, scnd_num, DIFF):
             matrix.append(j)
         rndm_ind = randint(1, len(matrix) - 1)
         correct = matrix.copy()
@@ -21,13 +23,10 @@ def main():
         
         print(f'Question: {question}')
         answer = input('Your answer: ')
-        if int(correct) == int(answer):
-            print('Correct!')
+        if logic_answer(answer, correct) == True:
             count += 1
-
         else:
-            print(f'{answer} is wrong answer ;(. Correct answer was {correct}.')
-            print(f"Let's try again, {name}!")
             count = 0
+            break
     if count == 3:
-        print(f'Congratulations, {name}!')
+        logic_bye(name)
