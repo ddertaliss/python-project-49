@@ -1,4 +1,5 @@
 from random import randint
+from math import gcd
 from brain_games.logic import *
 def main():
 
@@ -14,17 +15,8 @@ def main():
             else:
                 num1 = scnd_num
                 num2 = fst_num
-            
-            count_num = None 
-            correct = None
-            for j in range(1, num1 + 1):
-                if num1 % j == 0 and num2 % j == 0:
-                    correct = j
-                    if j == 1:
-                        if fst_num % 2 == 0 and scnd_num % 2 == 0:
-                            continue
-                        else:
-                            break
+
+            correct = gcd(num1, num2)
 
             print(f'Question: {fst_num} {scnd_num}')
             answer = int(input('Your answer: '))
