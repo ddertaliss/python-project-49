@@ -5,7 +5,7 @@ def main():
 
     count = 0
     for i in range(3):
-        FST_START = 1
+        FST_START = 2
         FST_END = 5
         SCND_START = 15
         SCND_END = 25
@@ -20,8 +20,10 @@ def main():
         correct = correct[rndm_ind]
         question = matrix
         question[rndm_ind] = '..'
-        
-        print(f'Question: {question}')
+        print_question = [str(i) for i in question]
+
+        print('Question: ', end = '')
+        print(*print_question)
         answer = int(input('Your answer: '))
         if logic_answer(answer, correct) == True:
             count += 1
