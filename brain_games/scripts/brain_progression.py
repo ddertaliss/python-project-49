@@ -6,7 +6,7 @@ def main():
     count = 0
     for i in range(3):
         FST_START = 2
-        FST_END = 5
+        FST_END = 4
         SCND_START = 15
         SCND_END = 25
         fst_num = randint(FST_START, FST_END)
