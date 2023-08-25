@@ -1,8 +1,10 @@
 
 from random import randint
-from brain_games.logic import *
-def main():
+from brain_games.logic import GLOBAL_COUNT, START, END, name, logic_answer
+from brain_games.logic import logic_bye
 
+
+def main():
     count = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')
     for i in range(GLOBAL_COUNT):
@@ -14,8 +16,8 @@ def main():
         else:
             correct = 'no'
         answer = input('Your answer:')
-        
-        if logic_answer(answer, correct) == True:
+
+        if logic_answer(answer, correct):
             count += 1
         else:
             count = 0

@@ -1,10 +1,12 @@
 from random import randint
-from brain_games.logic import *
+from brain_games.logic import GLOBAL_COUNT, name, logic_answer, logic_bye
+
+
+# flake8: noqa: C901
 def main():
     print('What number is missing in the progression?')
-
     count = 0
-    for i in range(3):
+    for i in range(GLOBAL_COUNT):
         FST_START = 2
         FST_END = 4
         SCND_START = 15
@@ -25,7 +27,7 @@ def main():
         print('Question: ', end = '')
         print(*print_question)
         answer = int(input('Your answer: '))
-        if logic_answer(answer, correct) == True:
+        if logic_answer(answer, correct):
             count += 1
         else:
             count = 0

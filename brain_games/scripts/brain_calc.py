@@ -1,10 +1,12 @@
 from random import randint
-from brain_games.logic import *
+from brain_games.logic import GLOBAL_COUNT, name, logic_answer, logic_bye
+
+
 def main():
     print('What is the result of the expression?')
 
     count = 0
-    for i in range(3):
+    for i in range(GLOBAL_COUNT):
         FST_START = 1
         FST_END = 30
         SCND_START = 2
@@ -29,7 +31,7 @@ def main():
         print(f'Question: {fst_num} {op_string} {scnd_num}')
         answer = int(input('Your answer: '))
 
-        if logic_answer(answer, correct) == True:
+        if logic_answer(answer, correct):
             count += 1
         else:
             count = 0
