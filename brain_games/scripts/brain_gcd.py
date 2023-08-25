@@ -5,6 +5,7 @@ def main():
 
         count = 0
         for i in range(3):
+            print('Find the greatest common divisor of given numbers.')
             fst_num = randint(START, END)
             scnd_num = randint(START, END)
             num1 = None
