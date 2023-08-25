@@ -17,7 +17,7 @@ def logic_answer(answer, correct):
         return True
     else:
         print(f'{answer} is wrong answer ;(. Correct answer was {correct}.')
-        print(f"Let's try again, {name[7:-1]}")
+        print(f"Let's try again, {name[7:-1]}!")
         return False
     
 
