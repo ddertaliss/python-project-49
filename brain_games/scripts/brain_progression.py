@@ -11,7 +11,7 @@ def main():
         SCND_END = 25
         fst_num = randint(FST_START, FST_END)
         scnd_num = randint(SCND_START, SCND_END)
-        diff = randint(FST_START, FST_END)
+        diff = 2
         matrix = []
         for j in range(fst_num, scnd_num, diff):
             matrix.append(j)
