@@ -5,6 +5,7 @@ def logic_hello():
     print('Welcome to the Brain Games!')
     name = input('May I have your name? ')
     hello = (f'Hello, {name}!')
+    print(hello)
     return hello
 
 name = logic_hello()
