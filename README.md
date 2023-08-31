@@ -1,6 +1,17 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com;/fawarris/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/fawarris/python-project-49/actions
 [![Maintainability](https://api.codeclimate.com/v1/badges/b5b63c9798ada845eb61/maintainability)](https://codeclimate.com/github/fawarris/python-project-49/maintainability))
+# Description
+Mind Games is a set of five console games based on popular mobile brain training apps. each game asks questions that need clear answers.
+After three erroneous answers, the game is considered to be completed. Wrong answers end the game and offer to play it again. 
+# Installation instructions
+pip install --user git+https://github.com/fawarris/python-project-49
+- brain-even
+- brain-calc
+- brain-gcd
+- brain-progression
+- brain-prime
+# Demonstration
 brain-even:
 <a href="https://asciinema.org/a/eN1LyLPM2dtYx2kwUuJElqh7k" target="_blank"><img src="https://asciinema.org/a/eN1LyLPM2dtYx2kwUuJElqh7k.svg" /></a>
 brain-calc:
