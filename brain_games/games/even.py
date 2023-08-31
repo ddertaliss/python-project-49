@@ -9,5 +9,3 @@ def main():
     else:
         correct = 'no'
     return quest, correct
-
-

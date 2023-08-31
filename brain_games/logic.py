@@ -1,7 +1,5 @@
 def engine(game, STRING):
     GLOBAL_COUNT = 3
-    START = 1
-    END = 80
     count = 0
 
     print('Welcome to the Brain Games!')
