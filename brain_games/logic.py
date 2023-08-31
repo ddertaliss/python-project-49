@@ -16,8 +16,8 @@ def engine(game, STRING):
             count += 1
         else:
             print(f'{answer} is wrong answer ;(. Correct answer was {correct}.')
-            print(f"Let's try again, {name[7:-1]}!")
+            print(f"Let's try again, {name}!")
             count = 0
             break
     if count == 3:
-        print(f'Congratulations, {name[7:-1]}!')
+        print(f'Congratulations, {name}!')
