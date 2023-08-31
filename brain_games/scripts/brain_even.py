@@ -1,26 +1,11 @@
-
-from random import randint
-from brain_games.logic import GLOBAL_COUNT, START, END, name, logic_answer
-from brain_games.logic import logic_bye
+from brain_games.logic import engine
+from brain_games.games import even
+from brain_games.games.consts import STR_EVEN
 
 
 def main():
-    count = 0
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    for i in range(GLOBAL_COUNT):
-        num = randint(START, END)
-        print(f'Question: {num}')
-        correct = ''
-        if num % 2 == 0:
-            correct = 'yes'
-        else:
-            correct = 'no'
-        answer = input('Your answer:')
+    engine(even, STR_EVEN)
 
-        if logic_answer(answer, correct):
-            count += 1
-        else:
-            count = 0
-            break
-    if count == 3:
-        logic_bye(name)
+
+if __name__ == '__main__':
+    main()
