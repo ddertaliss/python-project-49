@@ -5,7 +5,7 @@
 Mind Games is a set of five console games based on popular mobile brain training apps. each game asks questions that need clear answers.
 After three erroneous answers, the game is considered to be completed. Wrong answers end the game and offer to play it again. 
 # Installation instructions
-pip install --user git+https://github.com/fawarris/python-project-49
+`pip install --user git+https://github.com/fawarris/python-project-49`
 - brain-even
 - brain-calc
 - brain-gcd
