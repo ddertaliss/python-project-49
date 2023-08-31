@@ -17,4 +17,4 @@ def main():
 
     correct = gcd(num1, num2)
     quest = f'{fst_num} {scnd_num}'
-    return quest, correct
+    return quest, str(correct)
